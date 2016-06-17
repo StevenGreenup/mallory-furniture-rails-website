@@ -6,19 +6,18 @@ require 'csv'
 
     def initialize(item, price, description, condition, img_file, dimension_w, dimension_l, dimension_h, quantity, category)
       @item = item
-      @price = price
+      @price = price.to_f
       @description = description
       @condition = condition
       @img_file = img_file
       @dimension_w = dimension_w
       @dimension_l = dimension_l
       @dimension_h = dimension_h
-      @quantity = quantity
+      @quantity = quantity.to_i
       @category = category
     end
 
     def price
-
       if @condition == "good"
         "#{((@price)*0.9)} Clearanced Price! 10% off!"
       elsif @condition == "average"
@@ -27,8 +26,8 @@ require 'csv'
         @price
       end
     end
-  end
 
+  end
 
   def list
     @products = fetch_data
@@ -41,18 +40,16 @@ require 'csv'
 
   end
 
-
-
   def fetch_data
     products_list = []
     CSV.foreach("#{Rails.root}/mf_inventory.csv", headers: true) do |row|
       the_hash = row.to_hash
-      quantity = the_hash['quantity'].to_i
+      quantity = the_hash['quantity']
       dimension_w = the_hash['dimension_w']
       dimension_l = the_hash['dimension_l']
       dimension_h = the_hash['dimension_h']
       item    = the_hash['item']
-      price     = the_hash['price'].to_f
+      price     = the_hash['price']
       description    = the_hash['description']
       condition    = the_hash['condition']
       img_file = the_hash['img_file']
@@ -61,12 +58,11 @@ require 'csv'
       products_list << product
     end
     #filters out the products that have less than 1 item
-    return products_list.select do |a|
+    products_list.select do |a|
       a.quantity > 0
     end
 
   end
-
 
   def fetch_by_category(category)
     fetch_data.select do |product|

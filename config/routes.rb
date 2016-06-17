@@ -11,10 +11,6 @@ get 'products/storage' => 'products#storage', as: :storage
 get 'products/desks' => 'products#desks', as: :desks
 get 'products/misc' => 'products#miscellaneous', as: :miscellaneous
 
-
-
-
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
