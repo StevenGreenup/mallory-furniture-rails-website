@@ -1,0 +1,42 @@
+<div class="page-header">
+<h3>Mallory Furniture</h3>
+<%= link_to root_path do %>
+<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></button>
+<% end %>
+<%= link_to products_path do %>
+<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></button>
+<% end %>
+<div class="btn-group">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Catagory
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><%= link_to 'All Products', products_path %></li>
+    <li><%= link_to 'Tables', tables_path %></li>
+    <li><%= link_to 'Seating', seating_path %></li>
+    <li><%= link_to 'Bedroom', bedroom_path %></li>
+      <li><%= link_to 'Storage', storage_path %></li>
+        <li><%= link_to 'Desks', desks_path %></li>
+    <li role="separator" class="divider"></li>
+    <li><%= link_to 'Miscellaneous', miscellaneous_path %></li>
+  </ul>
+</div>
+</div>
+
+
+<br>
+<div class="col-sm-6">
+  <%= image_tag @product.img_file %>
+</div>
+
+<div class="col-sm-6">
+<ul class="list-group">
+  <li class="list-group-item"><h3> <span class="highlight1"><%= @product.item %></span></h3></li>
+  <li class="list-group-item"><span class="highlight2">Price</span> <br> <%= number_to_currency @product.price%></li>
+  <li class="list-group-item">Description <br> <%= @product.description%></li>
+  <li class="list-group-item">Width: <%= @product.dimension_w %>" </li>
+  <li class="list-group-item">Length: <%= @product.dimension_l %>" </li>
+  <li class="list-group-item">Height: <%= @product.dimension_h %>" </li>
+</ul>
+</div>

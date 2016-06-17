@@ -1,0 +1,27 @@
+
+<div class="page-header">
+<h1>Mallory Furniture</h1>
+</div>
+<div class="jumbotron">
+  <h3>Your furniture is old.</h3>
+  <p>Ours is older.</p>
+  <p>
+    <div class="btn-group">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Check out our products
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><%= link_to 'All Products', products_path %></li>
+        <li><%= link_to 'Tables', tables_path %></li>
+        <li><%= link_to 'Seating', seating_path %></li>
+        <li><%= link_to 'Bedroom', bedroom_path %></li>
+          <li><%= link_to 'Storage', storage_path %></li>
+            <li><%= link_to 'Desks', desks_path %></li>
+        <li role="separator" class="divider"></li>
+        <li><%= link_to 'Miscellaneous', miscellaneous_path %></li>
+      </ul>
+    </div>
+
+  </p>
+</div>
