@@ -23,5 +23,19 @@
       </ul>
     </div>
 
+    <div class="btn-group">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        Store Location Inventory
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><%= link_to 'See All Inventory', products_path %></li>
+
+        <li><%= link_to 'North Store Inventory', north_path %></li>
+        <li><%= link_to 'South Store Inventory', south_path %></li>
+        <li><%= link_to 'West Store Inventory', west_path %></li>
+      </ul>
+    </div>
+
   </p>
 </div>

@@ -37,7 +37,7 @@
           <%= image_tag product.img_file %>
           <div class="caption">
             <h3><%= product.item %></h3>
-            <p><%= number_to_currency product.price %></p>
+            <p><%= number_to_currency product.price %><br> Location: <%= product.location%></p>
               <%= link_to 'More info', product_path(id: product.item.parameterize), class:"btn btn-default" %>
           </div>
         </div>
