@@ -38,7 +38,6 @@ class ProductsController < ApplicationController
           @price
         end
       end
-
     end
 
   def list
